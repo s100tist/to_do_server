@@ -10,6 +10,6 @@ export class Usuario{
     @Column({nullable:false})
     contrasenia_usuario: string;
     
-    @Column({unique:true, nullable:true})
+    @Column({unique:true, nullable:false})
     correo_usuario: string;
 }
