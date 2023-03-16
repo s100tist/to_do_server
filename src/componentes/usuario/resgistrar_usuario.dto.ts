@@ -1,5 +1,5 @@
 export class resgistar_usuario_dto{
-    nombre:         string;
-    contrasenia:    string;
-    correo:         string;
+    nombre_usuario:         string;
+    contrasenia_usuario:    string;
+    correo_usuario:         string;
 }
