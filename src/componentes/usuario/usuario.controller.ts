@@ -1,7 +1,9 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { resgistar_usuario_dto } from './resgistrar_usuario.dto';
 import { UsuarioServiceService } from './usuario.service';
 import * as bcrypt from 'bcrypt';
+import { usuario_login_dto } from './usuario_login.dto';
+import { Usuario } from './usuario.entity';
 
 
 
@@ -20,4 +22,10 @@ export class UsuarioControllerController {
     async obtener_usuarios(){
         return this.servicio_usuario.listar_usuarios();
     }
+
+    @Post('login')
+    iniciar_sesion(@Body() usuario: usuario_login_dto){
+        return this.servicio_usuario.encontrar_usuario(usuario)
+    }
+    
 }
