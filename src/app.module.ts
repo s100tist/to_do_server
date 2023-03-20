@@ -5,6 +5,9 @@ import { UsuarioModule } from './componentes/usuario/usuario.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Usuario } from './componentes/usuario/usuario.entity';
 import { JwtModule } from '@nestjs/jwt';
+import { NotaModule } from './componentes/nota/nota.module';
+import { Nota } from './componentes/nota/nota.entity';
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -14,7 +17,7 @@ import { JwtModule } from '@nestjs/jwt';
       username:'esme',
       password:'Pme.2509',
       database:'to_do_db',
-      entities:[Usuario], 
+      entities:[Usuario, Nota], 
       synchronize:true
     }),
     UsuarioModule,
@@ -22,6 +25,7 @@ import { JwtModule } from '@nestjs/jwt';
       secret:'secreto',
       signOptions: { expiresIn: '60s' },
     }),
+    NotaModule
   ],
   controllers: [AppController],
   providers: [AppService],
