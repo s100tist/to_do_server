@@ -10,8 +10,7 @@ import { validateHeaderName } from 'http';
 
 @Injectable()
 export class UsuarioServiceService {
-    constructor (@InjectRepository(Usuario) private repositorio_usuario: 
-    Repository<Usuario>){}
+    constructor (@InjectRepository(Usuario) private repositorio_usuario: Repository<Usuario>){}
 
     probando():string{
         return "probando usuario";

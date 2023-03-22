@@ -1,15 +1,36 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 @Entity({name:'notas'})
-export class Notas{
+export class Nota{
     @PrimaryGeneratedColumn()
     id_nota: number;
 
-    @Column({nullable:false})
-    nombre_usuario: string;
+    @Column()
+    id_propietario_nota: number;
     
-    @Column({nullable:false})
-    contrasenia_usuario: string;
+    @Column()
+    compartida_nota: boolean;
     
-    @Column({unique:true, nullable:false})
-    correo_usuario: string;
+    @Column()
+    titulo_nota: string;
+
+    @Column()
+    contenido_nota: string;
+
+    @Column()
+    id_categoria_nota: number;
+    
+    @Column()
+    prioridad_nota: number;  // 0 ninguna, 1 baja, 2 media, 3 alta
+    
+    @Column()
+    color_nota: string;  // Hexa
+    
+    @Column({type: 'datetime', default: () => 'CURRENT_TIMESTAMP'})
+    fecha_creacion_nota: Date;
+
+    @Column({type: 'datetime', default: () => 'CURRENT_TIMESTAMP'})
+    fecha_termino_nota: Date;
+
+    @Column()
+    finalizado_nota: boolean;
 }
