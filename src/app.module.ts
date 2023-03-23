@@ -7,6 +7,8 @@ import { Usuario } from './componentes/usuario/usuario.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { NotaModule } from './componentes/nota/nota.module';
 import { Nota } from './componentes/nota/nota.entity';
+import { CategoriaModule } from './componentes/categoria/categoria.module';
+import { Categoria } from './componentes/categoria/categoria.entity';
 
 @Module({
   imports: [
@@ -17,7 +19,7 @@ import { Nota } from './componentes/nota/nota.entity';
       username:'esme',
       password:'Pme.2509',
       database:'to_do_db',
-      entities:[Usuario, Nota], 
+      entities:[Usuario, Nota, Categoria], 
       synchronize:true
     }),
     UsuarioModule,
@@ -25,7 +27,8 @@ import { Nota } from './componentes/nota/nota.entity';
       secret:'secreto',
       signOptions: { expiresIn: '60s' },
     }),
-    NotaModule
+    NotaModule,
+    CategoriaModule
   ],
   controllers: [AppController],
   providers: [AppService],
