@@ -1,6 +1,6 @@
 import { Entity, Column, OneToMany } from "typeorm";
 import { Usuario } from "../usuario/usuario.entity";
-@Entity({name:'usuario_nota'})
+@Entity({name:'relacion_nota_usuario'})
 export class Nota{
     // @OneToMany(() => Usuario, Usuario => )
     id_nota: number;
@@ -8,6 +8,11 @@ export class Nota{
     @Column()
     id_propietario_nota: number;
     
-    @Column()
+    @Column({
+        type: "enum",
+        enum:["Ver y editar", "Editar","Ver"],
+        default: "Ver"
+    }
+    )
     permisos: number
 }
