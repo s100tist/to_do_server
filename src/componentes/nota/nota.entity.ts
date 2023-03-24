@@ -19,10 +19,14 @@ export class Nota{
     @Column()
     id_categoria_nota: number;
     
-    @Column()
+    @Column({
+        type:"enum",
+        enum:["Ninguna", "Baja", "Media", "Alta", "Urgente"],
+        default: "Ninguna"
+    })
     prioridad_nota: number;  // 0 ninguna, 1 baja, 2 media, 3 alta
     
-    @Column()
+    @Column({length:6})
     color_nota: string;  // Hexa
     
     @Column({type: 'datetime', default: () => 'CURRENT_TIMESTAMP'})
