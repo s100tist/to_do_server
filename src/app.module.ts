@@ -9,6 +9,7 @@ import { NotaModule } from './componentes/nota/nota.module';
 import { Nota } from './componentes/nota/nota.entity';
 import { CategoriaModule } from './componentes/categoria/categoria.module';
 import { Categoria } from './componentes/categoria/categoria.entity';
+import { Relacion_Usuario_Nota } from './componentes/usuario_nota/usuario_nota.entity';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { Categoria } from './componentes/categoria/categoria.entity';
       username:'root',
       password:'',
       database:'to_do_db',
-      entities:[Usuario, Nota, Categoria], 
+      entities:[Usuario, Nota, Categoria, Relacion_Usuario_Nota], 
       synchronize:true
     }),
     UsuarioModule,
