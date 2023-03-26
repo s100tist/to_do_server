@@ -10,6 +10,7 @@ import { Nota } from './componentes/nota/nota.entity';
 import { CategoriaModule } from './componentes/categoria/categoria.module';
 import { Categoria } from './componentes/categoria/categoria.entity';
 import { Relacion_Usuario_Nota } from './componentes/usuario_nota/usuario_nota.entity';
+import { UsuarioNotaModule } from './componentes/usuario_nota/usuario_nota.module';
 
 @Module({
   imports: [
@@ -17,8 +18,8 @@ import { Relacion_Usuario_Nota } from './componentes/usuario_nota/usuario_nota.e
       type:'mysql',
       host:'localhost',
       port:3306,
-      username:'root',
-      password:'',
+      username:'esme',
+      password:'Pme.2509',
       database:'to_do_db',
       entities:[Usuario, Nota, Categoria, Relacion_Usuario_Nota], 
       synchronize:true
@@ -29,7 +30,8 @@ import { Relacion_Usuario_Nota } from './componentes/usuario_nota/usuario_nota.e
       signOptions: { expiresIn: '60s' },
     }),
     NotaModule,
-    CategoriaModule
+    CategoriaModule,
+    UsuarioNotaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

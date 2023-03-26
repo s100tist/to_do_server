@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { resgistar_usuario_dto } from './resgistrar_usuario.dto';
 import { UsuarioServiceService } from './usuario.service';
 import * as bcrypt from 'bcrypt';
