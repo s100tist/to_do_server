@@ -62,5 +62,5 @@ export class NotaController {
         @Param('boolean',ParseIntPipe)boolean:number){
         return this.notaServices.obtener_notas_usuario_finalizado(id_usuario,boolean)
     }
-
+    
 }

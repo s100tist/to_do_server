@@ -9,8 +9,8 @@ export class Relacion_Usuario_Nota{
     //https://stackoverflow.com/a/3996833
 
 
-
     // @OneToMany(() => Usuario, Usuario => )
+    @Column()
     id_nota: number;
 
     @Column()

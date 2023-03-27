@@ -26,4 +26,13 @@ export class UsuarioNotaService {
         return this.notaRepository.update({id_nota}, nota)
     }
 
+    obtener_notas_usuario_colaborador(id_usuario:number){
+        return this.notaRepository.createQueryBuilder("relacion_nota_usuario")
+        .select("notas.*, usuarios.nombre_usuario, usuarios.correo_usuario")
+        .innerJoin('notas', 'notas', 'notas.id_nota = relacion_nota_usuario.id_nota')
+        .innerJoin('usuarios','usuarios','usuarios.id_usuario = relacion_nota_usuario.id_colaborador')
+        .where('relacion_nota_usuario.id_colaborador = :id_usuario', { id_usuario })
+        .getRawMany();
+    }
+
 }
