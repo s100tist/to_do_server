@@ -18,8 +18,8 @@ import { UsuarioNotaModule } from './componentes/usuario_nota/usuario_nota.modul
       type:'mysql',
       host:'localhost',
       port:3306,
-      username:'esme',
-      password:'Pme.2509',
+      username:'root',
+      password:'',
       database:'to_do_db',
       entities:[Usuario, Nota, Categoria, Relacion_Usuario_Nota], 
       synchronize:true

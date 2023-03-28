@@ -47,6 +47,15 @@ export class NotaController {
     }
 
 
+    @Get('prioridad/:id_usuario/:prioridad_nota')
+    obtener_notas_usuario_prioridad(
+        @Param('id_usuario',ParseIntPipe)id_usuario:number,
+        @Param('prioridad_nota',ParseIntPipe)prioridad_nota:number){
+        return this.notaServices.obtener_notas_usuario_prioridad(id_usuario,prioridad_nota)
+    }
+
+
+
 
 
     @Get('compartidas/:id_usuario/:boolean')

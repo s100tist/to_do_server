@@ -49,6 +49,13 @@ export class NotaService {
         .getRawMany()
     }
 
+    obtener_notas_usuario_prioridad(id_propietario_nota: number,prioridad_nota: number){
+        return this.notaRepository.createQueryBuilder("notas")
+        .select("*").where("notas.id_propietario_nota = :id_propietario_nota and notas.prioridad_nota = :prioridad_nota").setParameters({id_propietario_nota:id_propietario_nota, prioridad_nota:prioridad_nota})
+        .printSql()
+        .getRawMany()
+    }
+
     obtener_notas_usuario_compartidas(id_propietario_nota: number,boolean: number){
         return this.notaRepository.createQueryBuilder("notas")
         .select("*").where("notas.id_propietario_nota = :id_propietario_nota and notas.compartida_nota = :compartida_nota")
